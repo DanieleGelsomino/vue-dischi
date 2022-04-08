@@ -1,0 +1,16 @@
+@import "varstyle";
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: $bg-color;
+  font-family: Monserrat, sans-serif;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
