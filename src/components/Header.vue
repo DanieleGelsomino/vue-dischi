@@ -1,7 +1,7 @@
 <template>
   <div class="row icon-bar">
     <div class="col-12">
-      <img class="" src="@/assets/spotify-logo.png" alt="" />
+      <img class="" src="@/assets/spotify-logo.png" alt="logo-spotify" />
     </div>
   </div>
 </template>
