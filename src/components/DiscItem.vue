@@ -10,7 +10,7 @@
 </template>
 
 <script>
-// esempio crad presa da API
+// esempio card presa da API
 /*
   author: "Bon Jovi"
   genre: "Rock"
@@ -18,7 +18,6 @@
   title: "New Jersey"
   year: "1988"
 */
-
 export default {
   name: "DiscItemComponent",
   props: {

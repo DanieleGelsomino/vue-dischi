@@ -32,7 +32,7 @@ export default {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #dfc;
+  background: #1ed760;
   border-radius: 50%;
   animation: lds-default 1.2s linear infinite;
 }
