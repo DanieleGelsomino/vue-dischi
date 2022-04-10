@@ -22,8 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-#### Prewiew of the page
- https://danielegelsomino.github.io/vue-dischi/
-
