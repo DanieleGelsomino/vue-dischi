@@ -2,6 +2,7 @@
   <div
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
+    <Select />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
@@ -18,12 +19,14 @@
 import DiscItem from "@/components/DiscItem.vue";
 import Loading from "@/components/Loading.vue";
 import axios from "axios";
+import Select from "@/components/Select.vue";
 
 export default {
   name: "MainComponent",
   components: {
     DiscItem,
     Loading,
+    Select,
   },
   data() {
     return {
@@ -34,8 +37,13 @@ export default {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((response) => {
-        this.albums = response.data.response;
-        console.log(this.albums[0]);
+        if (response.status === 200) {
+          this.albums = response.data.response;
+          //console.log(this.albums[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   },
 };
