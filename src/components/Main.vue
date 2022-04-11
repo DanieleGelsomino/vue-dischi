@@ -2,7 +2,7 @@
   <div
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
-    <Select />
+    <Select @filterByGenre="selectYourGenre" />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
@@ -31,11 +31,10 @@ export default {
   data() {
     return {
       albums: [],
+      genres: "",
     };
   },
-  props: {
-    genre: String,
-  },
+
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
@@ -48,6 +47,12 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+
+  methods: {
+    selectYourGenre(genres) {
+      this.genres = genres;
+    },
   },
 };
 </script>

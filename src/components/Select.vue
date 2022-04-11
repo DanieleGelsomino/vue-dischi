@@ -25,7 +25,8 @@ export default {
   methods: {
     selectedGenre() {
       console.log("hai selezionato un genere", this.genre);
-      this.$emit("select", this.genre);
+      this.$emit("selected", this.genre);
+      this.$emit("filterByGenre", this.genre);
     },
   },
 };
