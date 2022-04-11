@@ -9,8 +9,9 @@ body {
   background-color: $bg-color;
   font-family: Monserrat, sans-serif;
 }
-
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container-fluid {
+  #app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }

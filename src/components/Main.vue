@@ -2,12 +2,16 @@
   <div
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
-    <Select @changeGenre="selectYourGenre" />
+    <Select @changeGenre="genreSelect" />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
     >
-      <DiscItem v-for="(song, index) in albums" :key="index" :album="song" />
+      <DiscItem
+        v-for="(song, index) in filterGenre"
+        :key="index"
+        :album="song"
+      />
     </div>
     <div v-else class="loading-circle">
       <Loading />
@@ -36,21 +40,36 @@ export default {
   },
 
   mounted() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((response) => {
-        if (response.status === 200) {
-          this.albums = response.data.response;
-          //console.log(this.albums[0]);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+    this.loadAlbums();
+  },
+
+  computed: {
+    filterGenre() {
+      if (this.genres === "All") {
+        return this.albums;
+      }
+      const filteredGenre = this.albums.filter((song) => {
+        return song.genre.includes(this.genres);
       });
+      return filteredGenre;
+    },
   },
 
   methods: {
-    selectYourGenre(genres) {
+    loadAlbums() {
+      axios
+        .get("https://flynn.boolean.careers/exercises/api/array/music")
+        .then((response) => {
+          if (response.status === 200) {
+            this.albums = response.data.response;
+            //console.log(this.albums[0]);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    genreSelect(genres) {
       this.genres = genres;
     },
   },
