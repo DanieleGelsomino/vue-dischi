@@ -33,6 +33,9 @@ export default {
       albums: [],
     };
   },
+  props: {
+    genre: String,
+  },
   mounted() {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
