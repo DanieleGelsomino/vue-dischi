@@ -2,7 +2,7 @@
   <div
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
-    <Select @filterByGenre="selectYourGenre" />
+    <Select @changeGenre="selectYourGenre" />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
