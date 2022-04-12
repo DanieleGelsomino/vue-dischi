@@ -3,7 +3,7 @@
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
     <!-- sezione Select -->
-    <Select @changeGenre="genreSelect" />
+    <Select @changeGenre="genreSelect" class="text-center" />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
@@ -83,10 +83,9 @@ export default {
 @import "@/style/varstyle";
 
 .--dg-container-albums {
-  flex-wrap: wrap;
-  width: 63%;
-  margin: 50px auto;
-  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 
   .loading-circle {
     position: absolute;
