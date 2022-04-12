@@ -1,6 +1,7 @@
 <template>
   <div class="container-cd">
     <div class="--dg-card text-center">
+      <!-- creo la card  -->
       <img class="pt-3 pb-2" :src="album.poster" alt="album.title" />
       <h2 class="mt-2">{{ album.title }}</h2>
       <p class="mt-2">{{ album.author }}</p>
@@ -29,15 +30,13 @@ export default {
 <style scoped lang="scss">
 @import "@/style/varstyle";
 .container-cd {
-  width: calc(100% / 5);
+  width: 20%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
   .--dg-card {
     background-color: $overlay-color;
     width: 130px;
-    height: 240px;
-
     img {
       width: 100px;
     }

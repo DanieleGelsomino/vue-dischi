@@ -2,17 +2,20 @@
   <div
     class="--dg-container-albums d-flex justify-content-center container-fluid"
   >
+    <!-- sezione Select -->
     <Select @changeGenre="genreSelect" />
     <div
       class="d-flex justify-content-center flex-wrap"
       v-if="albums.length > 0"
     >
+      <!-- sezione DiscItem -->
       <DiscItem
         v-for="(song, index) in filterGenre"
         :key="index"
         :album="song"
       />
     </div>
+    <!-- sezione Loading -->
     <div v-else class="loading-circle">
       <Loading />
     </div>

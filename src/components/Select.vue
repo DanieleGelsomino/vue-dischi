@@ -1,6 +1,7 @@
 <template>
   <div class="row">
-    <div class="col p-3">
+    <div class="p-3">
+      <!-- creo la select -->
       <span class="me-2">Seleziona il tuo genere preferito</span>
       <select @change="filteredGenre($event)" name="select" id="genres-select">
         <option value="All">All</option>
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     filteredGenre(event) {
-      console.log(event.target.value);
+      // console.log(event.target.value);
       this.genre = event.target.value;
       this.$emit("changeGenre", this.genre);
     },
